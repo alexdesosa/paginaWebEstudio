@@ -35,9 +35,18 @@ body {
 /* =========================================
    NAVEGACIÓN
    ========================================= */
-header {
+/* header {
   background-color: var(--azul-oscuro);
   padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+} */
+
+header {
+  background-color: var(--azul-oscuro);
+  padding: 0.8rem 5%; /* Bajamos de 1rem a 0.8rem para compensar el tamaño del logo */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -50,9 +59,26 @@ nav {
   align-items: center;
 }
 .logo {
-  color: var(--blanco);
-  font-family: var(--fuente-titulos);
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  nav ul li {
+    margin-left: 1rem; /* Achicamos el espacio entre links en pantallas más chicas */
+  }
+}
+
+/* Agregá esto para controlar la imagen específicamente */
+.logo img {
+  height: 50px; /* Ajustá este número según qué tan grande quieras el logo */
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05); /* Un pequeño efecto cuando pasas el mouse */
 }
 .logo strong {
   color: var(--dorado);
