@@ -1,0 +1,486 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL (Fuera de Media Queries)
+   ========================================= */
+:root {
+  --azul-oscuro: #0a192f;
+  --azul-claro: #112240;
+  --dorado: #c5a059;
+  --blanco: #ffffff;
+  --gris-claro: #f8f9fa;
+  --texto-oscuro: #333333;
+  --fuente-titulos: "Playfair Display", serif;
+  --fuente-cuerpo: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  line-height: 1.6;
+  color: var(--texto-oscuro);
+  background-color: var(--blanco);
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 5rem 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   NAVEGACIÓN
+   ========================================= */
+header {
+  background-color: var(--azul-oscuro);
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: var(--blanco);
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+}
+.logo strong {
+  color: var(--dorado);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 2rem;
+}
+nav ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: var(--dorado);
+}
+
+/* =========================================
+   HERO SECTION (Botón más abajo)
+   ========================================= */
+.hero {
+  background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)),
+    url("../img/fondo-tribunales.jpg") no-repeat center center/cover;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--blanco);
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+
+.btn-primary {
+  background-color: var(--dorado);
+  color: var(--azul-oscuro);
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* =========================================
+   SERVICIOS Y SOBRE EL ESTUDIO
+   ========================================= */
+/* #servicios {
+  background-color: var(--gris-claro);
+  text-align: center;
+}
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+} */
+/* --- SECCIÓN SOBRE EL ESTUDIO --- */
+#sobre-estudio {
+  padding: 8rem 10%; /* Aumentamos a 8rem para que se aleje de lo de arriba */
+  background-color: var(--blanco);
+  display: flex;
+  justify-content: center;
+}
+
+.about-content {
+  max-width: 850px; /* Evita que el texto se estire demasiado a lo ancho */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content h2 {
+  margin-bottom: 3rem; /* Espacio entre el título y el primer párrafo */
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.about-content p {
+  font-size: 1.15rem;
+  color: var(--texto-oscuro);
+  line-height: 1.8;
+  margin-bottom: 2rem; /* Espacio entre párrafos */
+}
+
+/* --- LA CAJA RESALTADA (Highlight Box) --- */
+.highlight-box {
+  background-color: #f4f7f9; /* Un gris-azulino muy suave para dar seriedad */
+  border-left: 5px solid var(--dorado); /* La línea de autoridad */
+  padding: 2.5rem;
+  margin-top: 3.5rem; /* La separa de los párrafos anteriores */
+  text-align: left; /* Cambio de ritmo: el texto legal se lee mejor a la izquierda */
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-box p {
+  margin-bottom: 0; /* Quitamos el margen al último párrafo de la caja */
+  font-size: 1.05rem;
+  color: var(--azul-oscuro);
+  font-style: italic;
+}
+
+/* --- AJUSTE PARA MÓVILES --- */
+@media (max-width: 768px) {
+  #sobre-estudio {
+    padding: 5rem 5%;
+  }
+
+  .highlight-box {
+    padding: 1.5rem;
+    border-left: none;
+    border-top: 5px solid var(--dorado);
+    text-align: center;
+  }
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  color: var(--texto-oscuro);
+}
+
+.highlight-box {
+  background-color: var(--gris-claro);
+  border-left: 4px solid var(--dorado); /* Una línea dorada al costado da mucha elegancia */
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: left; /* Para que se lea mejor la info técnica */
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  font-style: italic;
+  color: var(--azul-oscuro);
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem; /* Espacio entre las tarjetas */
+  margin-top: 4rem; /* ESTO es lo que las aleja del título "Nuestras Áreas" */
+  margin-bottom: 2rem;
+}
+
+#servicios h2 {
+  margin-bottom: 1rem; /* Ajusta el espacio justo debajo del título */
+}
+.card {
+  background: var(--blanco);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border-top: 5px solid var(--azul-oscuro);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px);
+  border-top: 5px solid var(--dorado);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-content h2 {
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   LOGROS (Ahora funciona en PC y Celular)
+   ========================================= */
+.logros {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 4rem 10%;
+}
+.grid-logros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.logro-item i {
+  font-size: 2.5rem;
+  color: var(--dorado);
+  margin-bottom: 1rem;
+  display: block;
+}
+.logro-item .numero {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--blanco);
+  display: block;
+}
+
+/* =========================================
+   NOTICIAS Y PRENSA (Estilo sobrio)
+   ========================================= */
+
+.prensa-institucional {
+  background-color: #ffffff;
+  padding: 6rem 0;
+  border-top: 1px solid #e1e1e1;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-family: var(--fuente-titulos);
+  font-size: 2.2rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 4rem;
+  letter-spacing: 1px;
+}
+
+.grid-prensa-sobrio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.prensa-item {
+  border-left: 1px solid #d4af37; /* Una línea fina dorada lateral */
+  padding-left: 2rem;
+}
+
+.categoria {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.prensa-item h4 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.prensa-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.link-sobrio {
+  color: var(--azul-oscuro);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--dorado);
+  padding-bottom: 2px;
+  transition: 0.3s;
+}
+
+.link-sobrio:hover {
+  color: var(--dorado);
+}
+
+/* Responsivo para celular */
+@media (max-width: 992px) {
+  .grid-prensa-sobrio {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .prensa-item {
+    margin-bottom: 3rem;
+  }
+}
+
+/* =========================================
+   CONTACTO Y MAPA (Mapa controlado)
+   ========================================= */
+#contacto {
+  padding: 6rem 10%;
+}
+
+.contacto-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.info-contacto {
+  flex: 1;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8rem; /* Espacio entre cada dato */
+}
+
+.contacto-item i {
+  font-size: 1.4rem;
+  color: var(--dorado); /* El toque profesional */
+  margin-right: 1.5rem;
+  width: 25px; /* Para que todos los iconos queden alineados verticalmente */
+  text-align: center;
+}
+
+.contacto-item p {
+  font-size: 1.05rem;
+  color: var(--texto-oscuro);
+  margin: 0;
+}
+
+.contacto-item a {
+  text-decoration: none;
+  color: var(--texto-oscuro);
+  transition: 0.3s;
+}
+
+.contacto-item a:hover {
+  color: var(--dorado);
+}
+
+.mapa {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 300px; /* Tamaño controlado del mapa */
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .contacto-wrapper {
+    flex-direction: column;
+  }
+  .mapa {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+/* =========================================
+   FOOTER (Arreglado Instagram)
+   ========================================= */
+footer {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 3rem 10% 1rem;
+  text-align: center;
+}
+.footer-content {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+.socials {
+  margin: 1.5rem 0;
+}
+.socials a {
+  color: var(--dorado);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid var(--dorado);
+  border-radius: 5px;
+}
+.socials a:hover {
+  background: var(--dorado);
+  color: var(--azul-oscuro);
+}
+
+/* =========================================
+   WHATSAPP FLOTANTE
+   ========================================= */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  z-index: 1000;
+  text-decoration: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   RESPONSIVE (Solo ajustes específicos)
+   ========================================= */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 3rem 5%;
+  }
+  .about-content {
+    text-align: left;
+  }
+  .grid-logros {
+    grid-template-columns: 1fr 1fr;
+  }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
